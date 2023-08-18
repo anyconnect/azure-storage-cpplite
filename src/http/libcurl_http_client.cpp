@@ -54,6 +54,7 @@ namespace azure { namespace storage_lite {
                 break;
             }
 
+            check_code(curl_easy_setopt(m_curl, CURLOPT_SSL_VERIFYPEER, 0L));
             check_code(curl_easy_setopt(m_curl, CURLOPT_URL, m_url.data()));
 
             m_slist = curl_slist_append(m_slist, "Transfer-Encoding:");
